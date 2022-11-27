@@ -1,0 +1,202 @@
+@charset "utf-8";
+html,body{
+    font-family: 'Noto Sans',sans-serif;
+}
+#wrap{
+    width: 100%;
+    border:8px solid #fff;
+    background-image: url('../800_Parasite_MobileWeb/images/poster_mobile.jpg');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: 100% 100%;
+    position: relative;
+}
+.header{
+    padding: 24px;
+
+}
+/* =================================================================== */
+/* 모바일 햄버거 메뉴 효과 */
+/* ========================================================================== */
+
+/* A. 햄버거 메뉴 그리기 */
+input[id="menuicon"] {
+    display: none;
+}
+input[id="menuicon"]+label{
+    display: block;
+    width: 24px;
+    height: 14px;
+    cursor: pointer;
+    position: relative;
+}
+input[id="menuicon"]+label span{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    z-index: 100;
+    transition: all 0.3s;
+}
+input[id="menuicon"]+label span:nth-child(1){
+    top:0;   
+}
+input[id="menuicon"]+label span:nth-child(2){
+    top:50%;
+    transform: translateY(-50%);
+}
+input[id="menuicon"]+label span:nth-child(3){
+   bottom: 0;
+}
+
+/* b. 클릭시 x버튼 만들기 */
+input[id="menuicon"]:checked +label span:nth-child(1){
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+input[id="menuicon"]:checked +label span:nth-child(2){
+    opacity: 0;
+}
+input[id="menuicon"]:checked +label span:nth-child(3){
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+}
+
+/* gnb 메뉴 슬라이딩 효과 */
+.header nav[class="mobile_gnb"]{
+    width: 250px;
+    height: 100%;
+    background-color: #195730;
+    position: absolute;
+    left: -258px;
+    top: 0;
+    z-index: 90;
+    transition:all 0.5s linear;
+}
+input[id="menuicon"]:checked+label+nav {
+    left: 0px;
+}
+
+/*햄버거 클릭시 나오는 gnb메뉴 */
+.header .mobile_gnb{
+    padding: 64px 0 0 0;
+    font-family: 'Lato',sans-serif;
+    font-size: 0.8rem;
+}
+.header .mobile_gnb .gnb>li{
+    height: 42px;
+    line-height: 42px;
+    padding-left: 24px;
+}
+.header .mobile_gnb .gnb>li:hover{
+    background: #fff;
+}
+
+
+.header .mobile_gnb .gnb>li>a{
+    display: block;
+    color:#fff;
+}
+.header .mobile_gnb .gnb>li>a:hover{
+    color:#000;
+    font-weight: 700;
+}
+/* 추가 코딩 */
+.header .mobile_gnb .gnb>li:last-child:hover{
+    background: none;
+    cursor: default;
+}
+.header .mobile_gnb .gnb>li:last-child>a:hover{
+    color:#fff;
+    font-weight: 400;
+    cursor: default;
+}
+
+.header .mobile_gnb .sns{
+    display: table;
+    width: 234px;
+    padding-left: 24px;
+}
+.header .mobile_gnb .sns li{
+    display: table-cell;
+    width: 70px;
+    
+}
+.header .mobile_gnb .sns li a{
+    display: table-cell;
+    height: 40px;
+    text-align: center;
+    padding-top: 11px;
+    width: 70px;
+}
+.header .mobile_gnb .sns i{
+    font-size: 1.2rem;
+    color:#fff;
+}
+.header .mobile_gnb .sns .facebook{
+    background-color: #3c5a98;
+}
+.header .mobile_gnb .sns .facebook:hover{
+    background-color: #2b4b8e;
+}
+.header .mobile_gnb .sns .twitter{
+    background-color: #56acef;
+}
+.header .mobile_gnb .sns .twitter:hover{
+    background-color: #2898f0;
+}
+.header .mobile_gnb .sns .insta{
+    background-color: #5cbf4a;
+}
+.header .mobile_gnb .sns .insta:hover{
+    background-color: #2eb116;
+}
+
+/* CONTENTS */
+#contents{
+    width: 100%;
+}
+section .button{
+    width: 290px;
+    height: 40px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    z-index: 1;
+}
+
+section .button button{
+    width: 290px;
+    height: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+}
+section .button button{
+    font-family: 'Arial',sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color:#222;
+}
+footer{
+    background: #000;
+    padding-top: 30px;
+    text-align: center;
+}
+footer>p{
+    margin-bottom: 56px;
+}
+footer .copyright{
+    padding-bottom: 24px;
+}
+footer .copyright p{
+    margin-bottom: 24px;
+    color:#4c4c4c;
+}
+footer .copyright p:last-child{
+    
+    font-size: 0.75rem;
+}
